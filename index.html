@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+    <title>Nuevos Aires - Libros</title>
+</head>
+<body>
+    <header id="inicio">
+    <section class="container-fluid text-center title">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>
+                    Nuevos Aires
+                </h1>
+                <h2>
+                    Libros
+                </h2>
+            </div>
+        </div>
+    </section>
+    <!-- Menu de navegacion -->
+        <nav class="navbar navbar-expand-lg navbar-light"style="background-color: rgba(195, 122, 54,0.2);">
+            <div class="container">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="novedades"aria-current="page">Novedades</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" id="menorPrecio">Menor Precio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" id="linkContacto">Contacto</a>
+                  </li>
+                </ul>
+                <form class="d-flex form-nav">
+                  <input class="form-control me-2" id="txtSearch"ype="search" placeholder="Nombre del libro" aria-label="Search">
+                  <button class="btn btn-outline-warning" type="button"id="btnSearch">Buscar</button>
+                </form>
+              </div>
+            </div>
+        </nav>
+        <section id="mostrar"></section>
+    </header>
+    <main>
+      <section class="container-fluid login">
+        <div class="row">
+          <div class="col-md-6 p-2">
+            <button class="btn btn-warning"id="btnCuenta">Mi Cuenta</button>
+            <span><strong>Usuario </strong></span><span id="txtCuenta"></span><span id="btnSalir"></span>
+          </div>
+          <div id="datosCarrito"class="col-md-6 text-end">
+            <span>Cantidad:</span>
+            <span class="cantidadTotal"id="cantidadTotal"></span>
+            <span>ARS:</span>
+            <span class="precioTotal" id="precioTotal"></span>
+            <span id="imgCarrito"></span>
+            <!-- mensaje carrito de compras vacio -->
+            <span id="mensajeCarrito"></span>  
+          </div>
+        </div>
+      </section>
+      <section class="container text-center novedades">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>VENTA ONLINE</h1>
+          </div>
+        </div>
+      </section>
+      <!-- cards de libros -->
+      <section id="cards"class="card-container container"></section>
+      <!-- modal carrito de compras -->
+      <section id="modalCarrito"></section>
+      <!-- modal para compra de libros -->
+      <section id="modalContainer"></section>
+      <!-- Modal para iniciar Sesión -->
+      <section class="container"id="modalCuenta"></section>
+      <!-- Modal finalizar compra o cancelar -->
+      <section id="modalFinalizar"></section>
+      <!-- Modal alerts -->
+      <section id="modalAlert"></section>
+      <!-- formulario de contacto -->
+      <section class="text-center contacto"id="formContacto">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Contacto</h2>
+            <form action=""class="form" id="formulario2">
+              <label for="txtNombre"class="form-label">Nombre</label>
+              <input type="text"class="form-control" id="txtNombre" placeholder="Ingrese el Nombre">
+              <label for="txtEmail"class="form-label">Email</label>
+              <input type="text"class="form-control" id="txtEmail" placeholder="Ingrese el Correo">
+              <label for="txtCantidad"class="form-label">Cantidad de libros</label>
+              <input type="text"class="form-control" id="txtCantidad" placeholder="Ingrese la cantidad">
+              <section id="mensaje"></section>
+              <input type="button" class="btn btn-warning" id="btnBorrar"value="Borrar">
+              <input type="button" class="btn btn-primary" id="btnEnvio"value="Enviar">
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- boton top -->
+      <section class="boton-top"id="botonTop">
+        <img src="img/botontop.svg" alt="boton top">
+      </section>
+    </main>
+    <footer class="container-fluid text-center footer">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="footer-title">Nuevos Aires</h2>
+          <h3 class="footer-title">Libros</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 pt-3">
+          <span class="m-2"><a href="https://es-la.facebook.com/"target="blank"><img src="img/facebook.png" alt="icono facebook"class="imgFacebook"></a></span>
+          <span class="m-2"><a href="https://www.instagram.com/?hl=es-la" target="blank"><img src="img/instagram.png" alt="icono instagram"class="imgInstagram"></a></span>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Script -->
+    <!-- <script src="./js/main.js"></script> -->
+    <script src="./js/main2.js"></script>
+  </body>
+</html>
