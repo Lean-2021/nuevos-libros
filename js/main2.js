@@ -343,7 +343,7 @@ function enviarFormulario(){
 function agregarCarrito(lib,cant){
     lib.cantidad = parseInt(cant.value);
     librosComprados +=lib.cantidad; // sumar cantidad de libros
-    lib.stock = lib.stock - lib.cantidad;
+    lib.stock = lib.stock - lib.cantidad;//sacar del stock la cantidad de comprados
     $('#imgCarrito').html(`<img src="img/comprar.png"alt="carrito lleno">`);  //imagen carrito lleno  
     cantidadTotal.innerHTML = librosComprados;   
     let repetido = false;
@@ -477,13 +477,17 @@ function modalCarrito(listado){
                 <span aria-hidden="true">&times;</span>
                 </button></p>
                 <hr>`;
+                $('#detalleCarrito').html(`<p class="text-center detalle-carrito"id="detalleCarrito"><span><b id="modalComprados"></b></span> - <span><b id="modalPrecio"></b></span></p>`); //mostrar datos libros , precio al abrir modal
                 $('#modalComprados').html(`Libros: ${librosComprados}`); // mostrar libros comprados en modal carrito
-                $('#modalPrecio').html(`Libros: $${totalGasto}`); // motrar precio total en modal carrito
-            };
+                $('#modalPrecio').html(`Precio: $${totalGasto}`); // motrar precio total en modal carrito
+        };
     $('#contenidoCompra').html(contenido); //mostrar en modal html
     pago();  // funcion forma de pago
     $('#btnClose').click(()=>{   //boton cerra modal de compra y resetear formularios
         contenido='';
+        $('#modalComprados').html(''); // borrar libros comprados en modal carrito
+        $('#modalPrecio').html(''); // borrar precio comprados en modal carrito
+        $('#detalleCarrito').html(''); //borrar datos de libros y precio al cerrar modal
         $('#contenidoCompra').html(contenido);
         $('#pago').val('Seleccione un medio de pago');
         $('#cantCuotas').val('Seleccione la cantidad de cuotas');
