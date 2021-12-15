@@ -90,7 +90,7 @@ function inicio(listadoLibro){
         }
         else if (librosAnteriores ==null || listaComprados.length ==0){//comprobar login y estado del carrito
             // Mostrar imagen Carrito Vacio
-            $('#imgCarrito').html('<img src="img/comprar.png"alt="carrito lleno">');
+            $('#imgCarrito').html(`<img src="img/carrito.png"alt="carrito vacio">`);
             //mostrar precio y cantidad en carrito de compras
             cantidadTotal = document.getElementById('cantidadTotal');
             cantidadTotal.innerHTML = librosComprados;
