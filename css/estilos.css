@@ -292,7 +292,7 @@ header{
 }
 /* fondo tarjeta */
 .tarjeta{
-    background-image: url('../img/tarjeta.svg');
+    background-image: url('./img/tarjeta.svg');
     height:300px;
     background-repeat: no-repeat;
     background-position: center;
