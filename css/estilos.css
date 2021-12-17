@@ -399,8 +399,15 @@ header{
 }
 /* resoluciones mas pequeñas tarjeta */
 @media only screen and (max-width:400px){
+    /* Nav de búsqueda */
+    .form-nav{
+        margin-top:0;
+    }
+    /* margen cards de libros */
+    #cards{
+        margin-top:100px;
+    }
     /* pago con tarjeta - inputs - label Diseño*/
-    /* fondo tarjeta */
     .tarjeta{
         height:340px;
     }
