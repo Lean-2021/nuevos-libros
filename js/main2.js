@@ -426,7 +426,7 @@ function modalCarrito(listado){
                                 <section id="logoTarjeta">
                                     <img src="img/visamaster.png" alt="logo tarjeta"class="logo-tarjeta"><br><hr class="linea">
                                 </section>
-                                <input type="number"class="numTarjeta"placeholder="XXXX"max="5999" min="4000"id="numTarjeta1"oninput="comprobarTarjeta()"autocomplete="off">
+                                <input type="number"class="numTarjeta"placeholder="XXXX"max="5999" min="4000"id="numTarjeta1"oninput="comprobarTarjeta()"autocomplete="off"title="Elija un número entre 4000 y 5999">
                                 <input type="number"class="numTarjeta"placeholder="XXXX"max="9999" min="0"id="numTarjeta2"oninput="comprobarTarjeta()"autocomplete="off"disabled>
                                 <input type="number"class="numTarjeta"placeholder="XXXX"max="9999" min="0"id="numTarjeta3"oninput="comprobarTarjeta()"autocomplete="off"disabled>
                                 <input type="number"class="numTarjeta"placeholder="XXXX"max="9999" min="0"id="numTarjeta4"oninput="comprobarTarjeta()"autocomplete="off"disabled><br><br>
@@ -878,10 +878,10 @@ function comprobarTarjeta(){
             $('#numTarjeta2').removeAttr('disabled');
             $('#numTarjeta2').focus();
         }
-        else if (this.value.length==4 && (this.value <4000 || this.value >6000)){  // error si los 4 digitos no estan en el rango permitido para detectar tipo de tarjeta
-            mensajesError('Número Incorrecto');
+        else if (this.value.length==4 && (this.value <4000 || this.value >=6000)){  // error si los 4 digitos no estan en el rango permitido para detectar tipo de tarjeta
+            mensajesError('Número Incorrecto. Elija un número entre 4000 y 5999');
             $('#alertError').show();
-            $('#alertError').fadeOut(3000);
+            $('#alertError').fadeOut(4000);
         }
         else{
             $('#logoTarjeta').html('<img src="img/visamaster.png" alt="logo tarjeta"class="logo-tarjeta"><hr class="linea">');
